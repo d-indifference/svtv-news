@@ -1,5 +1,6 @@
 import { Command } from 'commander';
 import { printNews } from './print-news';
+import { printOpinions } from './print-opinions';
 
 const program = new Command();
 
@@ -15,7 +16,7 @@ program
 	.command('opinion')
 	.description('Мнения')
 	.action(() => {
-		console.log('Вы открыли Мнения');
+		printOpinions();
 	});
 
 program.parse();

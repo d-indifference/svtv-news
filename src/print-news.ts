@@ -16,7 +16,7 @@ const printNewsPreviews = (channel: Channel): void => {
 			time: item['pubDate'],
 			link: item['link'],
 			category: item['category'],
-			creator: item['dc:creator'],
+			creator: item['dc:creator'][0],
 			title: item['title']
 		});
 	});
@@ -31,7 +31,7 @@ const printNewsFull = (channel: Channel, link: string): void => {
 		buildNewsFull({
 			category: news['category'],
 			contentEncoded: news['content:encoded'],
-			creator: news['dc:creator'],
+			creator: news['dc:creator'][0],
 			link: news['link'],
 			time: news['pubDate'],
 			title: news['title']
