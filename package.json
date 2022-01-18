@@ -1,0 +1,41 @@
+{
+	"name": "svtv-news",
+	"version": "0.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsc",
+		"run": "node ./target/index.js news",
+		"run:dev": "tsc && node ./target/index.js news",
+		"prettier:write": "prettier --write .",
+		"prettier:check": "prettier --check .",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix ."
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/colors": "^1.2.1",
+		"@types/concat-stream": "^1.6.1",
+		"@types/html-to-text": "^8.0.1",
+		"@types/node": "^17.0.9",
+		"@types/xml2js": "^0.4.9",
+		"@typescript-eslint/eslint-plugin": "^5.10.0",
+		"@typescript-eslint/parser": "^5.10.0",
+		"eslint": "^8.7.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"prettier": "^2.5.1",
+		"typescript": "^4.5.4"
+	},
+	"dependencies": {
+		"@types/luxon": "^2.0.9",
+		"colors": "^1.4.0",
+		"commander": "^8.3.0",
+		"concat-stream": "^2.0.0",
+		"html-to-text": "^8.1.0",
+		"luxon": "^2.3.0",
+		"xml2js": "^0.4.23"
+	}
+}
