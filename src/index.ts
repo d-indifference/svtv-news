@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Command } from 'commander';
 import { printNews } from './print-news';
 import { printOpinions } from './print-opinions';
