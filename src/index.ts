@@ -2,6 +2,7 @@ import { Command } from 'commander';
 import { printNews } from './print-news';
 import { printOpinions } from './print-opinions';
 import { printThread } from './print-thread';
+import { printFactchecking } from './print-factchecking';
 
 const program = new Command();
 
@@ -26,6 +27,13 @@ program
 	.argument('[link]', 'Ссылка на тред')
 	.action(link => {
 		printThread(link);
+	});
+
+program
+	.command('factchecking')
+	.description('Фактчекинг')
+	.action(() => {
+		printFactchecking();
 	});
 
 program.parse();

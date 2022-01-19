@@ -51,3 +51,16 @@ export const buildThreadPreviews = (fields: NewsPreview) => {
 	console.log(`${fields.link}\n`.yellow);
 };
 
+export const buildFactCheckingPreviews = (
+	fields: NewsPreview,
+	status: string
+) => {
+	console.log(
+		`${DateTime.fromJSDate(new Date(fields.time)).toFormat('DDD')}`.cyan,
+		`${fields.category}`.blue,
+		`Автор: ${fields.creator}`.italic
+	);
+	console.log(`${`${status}`.bold}`.red);
+	console.log(convert(fields.title, { wordwrap: 1000 }));
+	console.log(`${fields.link}\n`.yellow);
+};
