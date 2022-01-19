@@ -1,6 +1,5 @@
 import { ChannelReader } from './channel-reader';
-import { buildOpinionPreviews } from './format-building';
-import { DateTime } from 'luxon';
+import { buildHeader, buildOpinionPreviews } from './format-building';
 
 export const printOpinions = (): void => {
 	const reader = new ChannelReader('https://svtv.org/opinion/rss/');
@@ -8,14 +7,7 @@ export const printOpinions = (): void => {
 	reader
 		.read()
 		.then(channel => {
-			console.log('\nSVTV NEWS CONSOLE CLIENT v0.0.0\n'.bold);
-			console.log(
-				`══ ${DateTime.fromJSDate(
-					new Date(channel.lastBuildDate)
-				).toFormat(
-					'DDD'
-				)} ═════════════════════════════════════════════════\n`
-			);
+			buildHeader(channel);
 
 			channel.item.forEach(item => {
 				buildOpinionPreviews({

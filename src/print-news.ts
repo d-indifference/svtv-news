@@ -1,15 +1,13 @@
 import { ChannelReader } from './channel-reader';
-import { buildNewsFull, buildNewsPreviews } from './format-building';
-import { DateTime } from 'luxon';
+import {
+	buildHeader,
+	buildNewsFull,
+	buildNewsPreviews
+} from './format-building';
 import { Channel } from './interfaces/channel';
 
 const printNewsPreviews = (channel: Channel): void => {
-	console.log('\nSVTV NEWS CONSOLE CLIENT v0.0.0\n'.bold);
-	console.log(
-		`══ ${DateTime.fromJSDate(new Date(channel.lastBuildDate)).toFormat(
-			'DDD'
-		)} ═════════════════════════════════════════════════\n`
-	);
+	buildHeader(channel);
 
 	channel.item.forEach(item => {
 		buildNewsPreviews({
