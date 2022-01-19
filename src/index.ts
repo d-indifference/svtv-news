@@ -1,5 +1,7 @@
 import { Command } from 'commander';
 import { printNews } from './print-news';
+import { printOpinions } from './print-opinions';
+import { printThread } from './print-thread';
 
 const program = new Command();
 
@@ -15,7 +17,15 @@ program
 	.command('opinion')
 	.description('Мнения')
 	.action(() => {
-		console.log('Вы открыли Мнения');
+		printOpinions();
+	});
+
+program
+	.command('thread')
+	.description('Треды')
+	.argument('[link]', 'Ссылка на тред')
+	.action(link => {
+		printThread(link);
 	});
 
 program.parse();
