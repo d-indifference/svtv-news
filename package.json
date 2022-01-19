@@ -1,20 +1,37 @@
 {
 	"name": "svtv-news",
-	"version": "0.0.0",
-	"description": "",
+	"version": "1.0.0",
+	"description": "Консольный клиент для SVTV News (https://svtv.org/)",
 	"main": "index.js",
+	"files": ["target/**/*"],
 	"scripts": {
 		"build": "tsc",
-		"run": "node ./target/index.js factchecking",
-		"run:dev": "tsc && node ./target/index.js news",
 		"prettier:write": "prettier --write .",
 		"prettier:check": "prettier --check .",
 		"lint": "eslint .",
 		"lint:fix": "eslint --fix ."
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"keywords": [
+		"svtv",
+		"news",
+		"svtv-news",
+		"svetov",
+		"console",
+		"terminal",
+		"client",
+		"libertarian",
+		"media"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/d-indifference/svtv-news.git"
+	},
+	"bugs": {
+		"url": "https://github.com/d-indifference/svtv-news/issues"
+	},
+	"homepage": "https://github.com/d-indifference/svtv-news#readme" ,
+	"author": "Demon of Indifference (https://github.com/d-indifference/)",
+	"license": "MIT",
 	"devDependencies": {
 		"@types/colors": "^1.2.1",
 		"@types/concat-stream": "^1.6.1",
