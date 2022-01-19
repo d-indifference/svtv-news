@@ -4,6 +4,10 @@
 	"description": "Консольный клиент для SVTV News (https://svtv.org/)",
 	"main": "index.js",
 	"files": ["target/**/*"],
+	"preferGlobal": true,
+	"bin": {
+		"svtv-news": "target/index.js"
+	},
 	"scripts": {
 		"build": "tsc",
 		"prettier:write": "prettier --write .",
