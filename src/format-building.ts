@@ -6,7 +6,7 @@ import { News } from './interfaces/news';
 import { Channel } from './interfaces/channel';
 
 export const buildHeader = (channel: Channel) => {
-	console.log('\nSVTV NEWS CONSOLE CLIENT v0.0.0\n'.bold);
+	console.log('\nSVTV NEWS CONSOLE CLIENT v1.0.1\n'.bold);
 	console.log(
 		`══ ${DateTime.fromJSDate(new Date(channel.lastBuildDate)).toFormat(
 			'DDD'

@@ -1,6 +1,6 @@
 {
 	"name": "svtv-news",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Консольный клиент для SVTV News (https://svtv.org/)",
 	"main": "index.js",
 	"files": ["target/**/*"],
