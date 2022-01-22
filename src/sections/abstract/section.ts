@@ -54,7 +54,7 @@ export abstract class Section {
 	}
 
 	protected printHeader(channel: Channel): void {
-		console.log('\nSVTV NEWS CONSOLE CLIENT v1.1.1\n'.bold);
+		console.log('\nSVTV NEWS CONSOLE CLIENT v1.1.2\n'.bold);
 		console.log(
 			`══ ${DateTime.fromJSDate(new Date(channel.lastBuildDate)).toFormat(
 				'DDD'
