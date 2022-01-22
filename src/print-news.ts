@@ -46,7 +46,7 @@ export const printNews = (link?: string): void => {
 		.read()
 		.then(channel => {
 			if (link) {
-				printNewsFull(channel, link);
+				printNewsFull(channel, link.trim());
 			} else {
 				printNewsPreviews(channel);
 			}

@@ -5,6 +5,7 @@ import { printNews } from './print-news';
 import { printOpinions } from './print-opinions';
 import { printThread } from './print-thread';
 import { printFactchecking } from './print-factchecking';
+import { printTranslation } from './print-translation';
 
 const program = new Command();
 
@@ -36,6 +37,14 @@ program
 	.description('Фактчекинг')
 	.action(() => {
 		printFactchecking();
+	});
+
+program
+	.command('translation')
+	.description('Переводы')
+	.argument('[link]', 'Ссылка на перевод')
+	.action(link => {
+		printTranslation(link);
 	});
 
 program.parse();
