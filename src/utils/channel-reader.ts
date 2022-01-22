@@ -1,7 +1,7 @@
 import * as https from 'https';
 import * as xml2js from 'xml2js';
-import { Channel } from './interfaces/channel';
-import { Rss } from './interfaces/rss';
+import { Channel } from '../interfaces/channel';
+import { Rss } from '../interfaces/rss';
 const concat = require('concat-stream');
 
 export class ChannelReader {

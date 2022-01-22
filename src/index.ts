@@ -1,50 +1,37 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import { printNews } from './print-news';
-import { printOpinions } from './print-opinions';
-import { printThread } from './print-thread';
-import { printFactchecking } from './print-factchecking';
-import { printTranslation } from './print-translation';
+import { NewsSection } from './sections/news-section';
+import { OpinionSection } from './sections/opinion-section';
+import { ThreadSection } from './sections/thread-section';
+import { FactcheckingSection } from './sections/factchecking-section';
+import { TranslationSection } from './sections/translation-section';
 
 const program = new Command();
 
-program
-	.command('news')
-	.description('Новости')
-	.argument('[link]', 'Ссылка на новость')
-	.action(link => {
-		printNews(link);
-	});
+new NewsSection(
+	'news',
+	'Новости',
+	'Ссылка на новость',
+	'Новость не найдена :('
+).init(program);
 
-program
-	.command('opinion')
-	.description('Мнения')
-	.action(() => {
-		printOpinions();
-	});
+new OpinionSection('opinion', 'Мнения').init(program);
 
-program
-	.command('thread')
-	.description('Треды')
-	.argument('[link]', 'Ссылка на тред')
-	.action(link => {
-		printThread(link);
-	});
+new ThreadSection(
+	'thread',
+	'Треды',
+	'Ссылка на тред',
+	'Тред не найден :('
+).init(program);
 
-program
-	.command('factchecking')
-	.description('Фактчекинг')
-	.action(() => {
-		printFactchecking();
-	});
+new FactcheckingSection('factchecking', 'Фактчекинг').init(program);
 
-program
-	.command('translation')
-	.description('Переводы')
-	.argument('[link]', 'Ссылка на перевод')
-	.action(link => {
-		printTranslation(link);
-	});
+new TranslationSection(
+	'translation',
+	'Переводы',
+	'Ссылка на перевод',
+	'Перевод не найден :('
+).init(program);
 
 program.parse();
