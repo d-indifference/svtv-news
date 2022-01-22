@@ -46,7 +46,7 @@ export const printThread = (link?: string) => {
 		.read()
 		.then(channel => {
 			if (link) {
-				printThreadFull(channel, link);
+				printThreadFull(channel, link.trim());
 			} else {
 				printThreads(channel);
 			}
