@@ -1,4 +1,4 @@
-# SVTV News
+# SVTV News [![NPM version](https://img.shields.io/npm/v/svtv-news.svg?style=flat)](https://www.npmjs.com/package/svtv-news) [![NPM monthly downloads](https://img.shields.io/npm/dm/svtv-news.svg?style=flat)](https://npmjs.org/package/svtv-news) [![NPM total downloads](https://img.shields.io/npm/dt/svtv-news.svg?style=flat)](https://npmjs.org/package/svtv-news)
 
 Простой терминальный клиент для SVTV News [svtv.org](https://svtv.org/)
 
