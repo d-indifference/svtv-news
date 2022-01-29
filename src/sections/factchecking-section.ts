@@ -28,10 +28,14 @@ export class FactcheckingSection extends Section {
 	}
 
 	protected printListItems(channel: Channel) {
+		const loading = this.twirlTimer();
+
+		const factcheckingItems: Array<FactcheckingPreview> = [];
+
 		channel.item.forEach(item => {
 			this.factcheckingStatus(item['link'][0])
 				.then(status => {
-					this.factcheckingListItem({
+					factcheckingItems.push({
 						time: item['pubDate'],
 						link: item['link'],
 						category: item['category'],
@@ -40,7 +44,27 @@ export class FactcheckingSection extends Section {
 						status
 					});
 				})
-				.catch(error => console.error(error));
+				.then(() => {
+					if (factcheckingItems.length === channel.item.length) {
+						factcheckingItems.sort((a, b) => {
+							return (
+								new Date(b.time).getTime() -
+								new Date(a.time).getTime()
+							);
+						});
+
+						this.printHeader(channel);
+
+						factcheckingItems.forEach(item => {
+							this.factcheckingListItem(item);
+						});
+
+						clearInterval(loading);
+					}
+				})
+				.catch(error => {
+					console.error(error);
+				});
 		});
 	}
 

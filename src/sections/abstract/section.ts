@@ -54,12 +54,24 @@ export abstract class Section {
 	}
 
 	protected printHeader(channel: Channel): void {
-		console.log('\nSVTV NEWS CONSOLE CLIENT v1.1.2\n'.bold);
+		console.log('\nSVTV NEWS CONSOLE CLIENT v1.1.3\n'.bold);
 		console.log(
 			`══ ${DateTime.fromJSDate(new Date(channel.lastBuildDate)).toFormat(
 				'DDD'
 			)} ═════════════════════════════════════════════════\n`
 		);
+	}
+
+	protected twirlTimer() {
+		const h = ['|', '/', '-', '\\'];
+		let i = 0;
+
+		return setInterval(() => {
+			i = i > 3 ? 0 : i;
+			console.clear();
+			console.log(h[i]);
+			i++;
+		}, 300);
 	}
 
 	protected abstract listItem<T extends NewsPreview>(fields: T): void;

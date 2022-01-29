@@ -14,9 +14,12 @@ export class NewsSection extends ArgumentSection {
 	}
 
 	protected listItem<T extends NewsPreview>(fields: T): void {
+		const date = DateTime.fromJSDate(new Date(fields.time));
+
 		console.log(
-			`${DateTime.fromJSDate(new Date(fields.time)).toFormat('HH:mm')}`
-				.cyan,
+			`${date.toFormat(
+				date.day !== new Date().getDate() ? 'DDD HH:mm' : 'HH:mm'
+			)}`.cyan,
 			`${fields.category}`.blue,
 			fields.creator
 		);
