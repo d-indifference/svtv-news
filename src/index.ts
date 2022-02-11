@@ -6,6 +6,7 @@ import { OpinionSection } from './sections/opinion-section';
 import { ThreadSection } from './sections/thread-section';
 import { FactcheckingSection } from './sections/factchecking-section';
 import { TranslationSection } from './sections/translation-section';
+import { ExchangeSection } from './sections/exchange-section';
 
 const program = new Command();
 
@@ -33,5 +34,7 @@ new TranslationSection(
 	'Ссылка на перевод',
 	'Перевод не найден :('
 ).init(program);
+
+new ExchangeSection().init(program);
 
 program.parse();
