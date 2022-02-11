@@ -3,8 +3,10 @@ import { DateTime } from 'luxon';
 import { Channel } from '../../interfaces/channel';
 import { NewsPreview } from '../../interfaces/news-preview';
 import { Command } from 'commander';
+import { TerminalCommand } from './terminal-command';
+import { SVTV_URL, VERSION_NUMBER } from '../../utils/consts';
 
-export abstract class Section {
+export abstract class Section implements TerminalCommand {
 	protected name: string;
 
 	protected description: string;
@@ -14,7 +16,7 @@ export abstract class Section {
 	constructor(name: string, description: string) {
 		this.name = name;
 		this.description = description;
-		this.channelReader = new ChannelReader(`https://svtv.org/${name}/rss/`);
+		this.channelReader = new ChannelReader(`${SVTV_URL}${name}/rss/`);
 	}
 
 	public init(program: Command): void {
@@ -54,7 +56,7 @@ export abstract class Section {
 	}
 
 	protected printHeader(channel: Channel): void {
-		console.log('\nSVTV NEWS CONSOLE CLIENT v1.1.3\n'.bold);
+		console.log(`\nSVTV NEWS CONSOLE CLIENT v${VERSION_NUMBER}\n`.bold);
 		console.log(
 			`══ ${DateTime.fromJSDate(new Date(channel.lastBuildDate)).toFormat(
 				'DDD'
