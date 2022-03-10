@@ -1,6 +1,6 @@
 {
 	"name": "svtv-news",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"description": "Консольный клиент для SVTV News (https://svtv.org/)",
 	"main": "index.js",
 	"files": [
@@ -16,7 +16,7 @@
 		"prettier:check": "prettier --check .",
 		"lint": "eslint .",
 		"lint:fix": "eslint --fix .",
-		"run": "node ./target/index.js exchange",
+		"run": "node ./target/index.js context",
 		"run:super": "npm run lint:fix && npm run build && npm run run"
 	},
 	"keywords": [
