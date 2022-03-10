@@ -7,6 +7,7 @@ import { ThreadSection } from './sections/thread-section';
 import { FactcheckingSection } from './sections/factchecking-section';
 import { TranslationSection } from './sections/translation-section';
 import { ExchangeSection } from './sections/exchange-section';
+import { ContextSection } from './sections/context-section';
 
 const program = new Command();
 
@@ -36,5 +37,7 @@ new TranslationSection(
 ).init(program);
 
 new ExchangeSection().init(program);
+
+new ContextSection('context', 'Контекст').init(program);
 
 program.parse();
